@@ -1,15 +1,18 @@
-const pizzas = ["frango", "queijo", "portuguesa", "americana"]
+const tipoPizza = "frango"; // Tipo da pizza desejada
+const tamanhoPizza = "grande"; // Tamanho da pizza desejada
 
-const tamanho = ["pequena", "media", "grande", "gigante"]
+let indiceTipo = pizzas.indexOf(tipoPizza); // Encontra o índice do tipo de pizza
+let indiceTamanho = tamanho.indexOf(tamanhoPizza); // Encontra o índice do tamanho
 
-const precoFrango = [20, 30, 40, 50]
+// Verifica se o tipo e tamanho existem nos arrays
+if (indiceTipo !== -1 && indiceTamanho !== -1) {
+  precoFinal = eval(
+    `preco${
+      tipoPizza.charAt(0).toUpperCase() + tipoPizza.slice(1)
+    }[${indiceTamanho}]`
+  );
+} else {
+  console.log("Pizza ou tamanho não encontrados.");
+}
 
-const precoQueijo = [24, 34, 44, 54]
-
-const precoPortuguesa = [25, 35, 45, 55]
-
-const precoAmericana = [30, 40, 50, 60]
-
-let precoFinal = 0
-precoFinal = precoFrango[0] + tamanho[2] * 2
-console.log(precoFinal)
+console.log(precoFinal); // Exibe o preço final calculado
